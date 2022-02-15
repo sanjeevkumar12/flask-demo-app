@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "2.0"
+python-dotenv = "*"
+flask-sqlalchemy = "*"
+flask-restx = "*"
+flask-migrate = "*"
+apispec = "*"
+flask-apispec = "*"
+
+[scripts]
+server = "flask run"
+black = "python -m black ."
+flake8 = "python -m flake8"
+isort = "isort ."
+routes = "flask routes"
+db = "flask db"
+tests = "pytest --cov --cov-fail-under=80"
+
+[dev-packages]
+isort = "*"
+black = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[requires]
+python_version = "3.9"
