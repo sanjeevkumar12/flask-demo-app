@@ -7,10 +7,11 @@ name = "pypi"
 flask = "2.0"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
-flask-restx = "*"
 flask-migrate = "*"
-apispec = "*"
 flask-apispec = "*"
+unidecode = "*"
+psycopg2-binary = "*"
+apispec = {extras = ["validation"], version = "*"}
 
 [scripts]
 server = "flask run"
@@ -20,6 +21,9 @@ isort = "isort ."
 routes = "flask routes"
 db = "flask db"
 tests = "pytest --cov --cov-fail-under=80"
+docker = "sudo systemctl start docker"
+postgres_init = "docker run -d --name flask_postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -v /home/sanjeev/Workspace/Data/Docker/Postgres/db/:/var/lib/postgresql/data -p 5432:5432 postgres"
+postgresstart = "docker start flask_postgres"
 
 [dev-packages]
 isort = "*"

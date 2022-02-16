@@ -1,5 +1,7 @@
 from flask import Flask
+
 from auth.services import auth_repository
+
 
 def test_create_user(app: Flask):
     with app.app_context():
